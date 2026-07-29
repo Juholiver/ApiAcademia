@@ -7,7 +7,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReact", policy =>
     {
-        policy.WithOrigins("http://localhost:5173") // Porta padrão do Vite
+        policy.WithOrigins(
+                "http://localhost:5173", // Porta padrão do Vite (Local)
+                "https://winterforge-rho.vercel.app" // Produção Vercel
+              )
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
